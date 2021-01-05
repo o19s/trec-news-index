@@ -1,0 +1,66 @@
+{
+    "mappings": {
+        "properties": {
+            "title": {
+                "type": "text",
+                "analyzer": "trec"
+            },
+            "c012_embed": {
+                "type": "dense_vector",
+                "dims": 768
+            },
+            "author": {
+                "type": "keyword"
+            },
+            "kicker": {
+                "type": "text",
+                "analyzer": "trec",
+                "fields": {
+                    "raw": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "date" : {
+                "type" : "date"
+            },
+            "contents_1": {
+                "type": "text",
+                "analyzer": "trec"
+            },
+            "contents_2": {
+                "type": "text",
+                "analyzer": "trec"
+            },
+            "contents_3": {
+                "type": "text",
+                "analyzer": "trec"
+            },
+            "contents_all": {
+                "type": "text",
+                "analyzer": "trec"
+            },
+            "url": {
+                "type": "keyword"
+            },
+            "links" : {
+                "type": "keyword"
+            },
+            "ners": {
+                "type": "text",
+                "analyzer": "whitespace"
+            }
+        }
+    },
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "trec": {
+                    "type" : "custom",
+                    "tokenizer": "standard",
+                    "char_filter": ["html_strip"]
+                }
+            }
+        }
+    }   
+}
